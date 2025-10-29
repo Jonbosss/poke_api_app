@@ -18,4 +18,7 @@ pokemon_name = "pikachu"
 pokemon_info = get_pokemon_info(pokemon_name)
 
 if pokemon_info:
-    print(f"{pokemon_info["name"]}")
+    print(f"Name: {pokemon_info["name"].capitalize()}")
+    print(f"Id: {pokemon_info["id"]}")
+    print(f"Height: {pokemon_info["height"]}")
+    print(f"Weight: {pokemon_info["weight"]}")
