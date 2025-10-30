@@ -14,7 +14,7 @@ def get_pokemon_info(name):
         print(f"Failed to retrieve data {response.status_code}")
 
 
-pokemon_name = "charizard"
+pokemon_name = "flareon"
 pokemon_info = get_pokemon_info(pokemon_name)
 
 if pokemon_info:
@@ -22,4 +22,9 @@ if pokemon_info:
     print(f"Id: {pokemon_info["id"]}")
     print(f"Height: {pokemon_info["height"]}")
     print(f"Weight: {pokemon_info["weight"]}")
-    print(f"Type(s): {pokemon_info["types"][0]["type"]["name"].capitalize()}")
+    if (len(pokemon_info["types"])) > 1:
+        print(
+        f"Types: {pokemon_info["types"][0]["type"]["name"].capitalize()}" f" and {pokemon_info["types"][1]["type"]["name"].capitalize()}")
+    else:
+        print(
+        f"Type: {pokemon_info["types"][0]["type"]["name"].capitalize()}")
